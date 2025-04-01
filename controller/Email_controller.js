@@ -28,10 +28,6 @@ const sendDevisMailPost = async (req, res) => {
         //console.log("ReqFiles ", req.file); 
 
         const attachment = req.file;
-
-        console.log("+++++++++++++++++Destinataire email: ", email)
-
-
         const result = await emailService.sendDevisMail(email, subject, message, attachment);
 
         res.status(200).json({ message: "E-mail envoyé avec succès !" });
