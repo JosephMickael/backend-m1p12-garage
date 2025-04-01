@@ -5,7 +5,7 @@ const corsOptions = {
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 };
-const routes = require('/routes/route')
+const routes = require('./routes/route')
 
 require('dotenv').config();
 
