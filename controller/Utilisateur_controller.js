@@ -190,4 +190,5 @@ const getAllUserDevis = async (req, res) => {
 }
 
 
+
 module.exports = { getAllUserDevis, getAllUser, createUser, getUserById, updateUser, updatePassword, getCurrentUser, deleteUser, usersDetails, getAllManagers }
