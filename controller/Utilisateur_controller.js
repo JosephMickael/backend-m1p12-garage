@@ -175,10 +175,12 @@ const getAllUserDevis = async (req, res) => {
         } else if (req.utilisateur.role == "manager") {
             users.client = await Utilisateur.find({ role: "client" });
             users.mecanicien = await Utilisateur.find({ role: "mecanicien" });
-        } else {
+        } else if (req.utilisateur.role == "client") {
+            users.client = null
+        }
+        else {
             return res.status(403).json({ message: "Accès refusé" });
         }
-        //console.log("DevisUser", users); 
 
         return res.status(200).json(users);
 
@@ -186,6 +188,7 @@ const getAllUserDevis = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
 
 
 module.exports = { getAllUserDevis, getAllUser, createUser, getUserById, updateUser, updatePassword, getCurrentUser, deleteUser, usersDetails, getAllManagers }
