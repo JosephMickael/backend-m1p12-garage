@@ -7,7 +7,8 @@ const verifierAuthentification = require('../middlewares/auth.middleware');
 const upload = require('../middlewares/multer.middlware');
 const devisController = require('../controller/devis_controller');
 const contactController = require('../controller/Contact_controller')
-const emailController = require('../controller/Email_controller')
+const emailController = require('../controller/Email_controller');
+const paiementController = require('../controller/Paiement_controller'); 
 
 
 // Rendezvous 
