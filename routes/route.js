@@ -49,7 +49,7 @@ router.get('/devis', verifierAuthentification, devisController.getAllDevis);
 router.get('/devis/:id', verifierAuthentification, devisController.getDevisById);
 router.put('/valider-devis/:id', verifierAuthentification, devisController.validerDevis);
 router.delete('/supprimer-devis/:id', verifierAuthentification, devisController.supprimerDevis);
-router.get('/get-utilisateur-devis', verifierAuthentification, utilisateurController.getAllUserDevis); 
+router.get('/get-utilisateur-devis', verifierAuthentification, utilisateurController.getAllUserDevis);
 
 
 // Contact
@@ -64,6 +64,7 @@ router.post('/send-devisMail', verifierAuthentification, upload.single('pdf'),  
 
 // Paiement 
 router.post('/payement', verifierAuthentification, paiementController.creersession); 
+router.get('/taux', verifierAuthentification, paiementController.obtenirTaux); 
 
 const authenticationController = require('../controller/Auth_controller');
 router.post('/login', authenticationController.login)
